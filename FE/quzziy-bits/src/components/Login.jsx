@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
-import './Auth.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Correctly import useNavigate
+
+import "./Auth.css";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    alert(`Logged in as: ${email}`);
+    if (email === "admin@gmail.com" && password === "admin") {
+      // alert("Login successful!");
+      navigate("/quiz");
+    } else {
+      alert("Invalid email or password.");
+    }
   };
 
   return (
