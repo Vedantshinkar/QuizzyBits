@@ -4,6 +4,16 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import './App.css';
 
+function Home() {
+  return (
+    <div className="home">
+      <h1 className="title">QuizzyBits</h1>
+      <p className="subtitle">Unleash your knowledge with fun quizzes!</p>
+      <Link to="/login" className="start-button">Get Started</Link>
+    </div>
+  );
+}
+
 function App() {
   return (
     <Router>
@@ -14,6 +24,7 @@ function App() {
         </nav>
 
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
