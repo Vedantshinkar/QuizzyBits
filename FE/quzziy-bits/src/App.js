@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import QuizList from './components/QuizList';
 import './App.css';
 
 function Home() {
@@ -15,6 +16,7 @@ function Home() {
 }
 
 function App() {
+
   return (
     <Router>
       <div className="container">
@@ -28,8 +30,17 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
+
+
+         <div className="App">
+      <QuizList />
+    </div>
+
+
       </div>
     </Router>
+
+   
   );
 }
 
